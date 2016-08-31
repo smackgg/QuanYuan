@@ -1,4 +1,4 @@
 {
   "presets": ["es2015", "stage-0", "react"],
-  "plugins": ["react-hot-loader/babel", ["antd", { style: true }]]
+  "plugins": ["react-hot-loader/babel", ["antd", { style: "css", libraryName: "antd-mobile" }]]
 }
