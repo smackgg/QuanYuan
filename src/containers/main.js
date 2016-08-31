@@ -9,7 +9,6 @@ import { Router, Route } from 'react-router';
 // Test data
 
 // style
-import '../style/style.scss';
 
 
 function Main(props) {
