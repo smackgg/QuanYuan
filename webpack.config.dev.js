@@ -1,19 +1,24 @@
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 var config = {
   entry: [
     'babel-polyfill',
     path.resolve(__dirname, 'src/index.js'),
-    'webpack-dev-server/client?http://127.0.0.1:8080',
+    'webpack-dev-server/client?http://0.0.0.0:8080',
     'webpack/hot/only-dev-server',
   ],
   output: {
-    publicPath: "http://127.0.0.1:8080/dist/",
+    publicPath: "http://0.0.0.0:8080/dist/",
     filename: 'bundle.js'
   },
   devServer: {
+    host: '0.0.0.0',
+    port: '8080',
     historyApiFallback: true
   },
+  devtool: 'cheap-module-eval-source-map',
   module: {
     loaders: [{
       test: /\.js?$/,
@@ -22,18 +27,23 @@ var config = {
     },
     {
       test: /\.scss$/,
-      exclude: /(node_modules)/,
       loaders: ["style", "css?sourceMap", "postcss", "sass?sourceMap"],
     },
     {
+      test: /\.css$/,
+      loaders: ["style", "css?sourceMap"],
+    },
+    {
       test: /\.less$/,
-      exclude: /(node_modules)/,
       loader: "style!css!less"
     }]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ]
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  postcss: function () {
+    return [precss, autoprefixer];
+  }
 };
 
 module.exports = config;

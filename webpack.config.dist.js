@@ -3,10 +3,12 @@ var webpack = require('webpack');
 
 var config = {
   entry: [
-    path.resolve(__dirname, 'js/main.js'),
+    'babel-polyfill',
+    path.resolve(__dirname, 'src/index.js'),
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: 'bundle.js',
   },
   module: {
@@ -20,6 +22,10 @@ var config = {
       loaders: ["style", "css?sourceMap", "postcss", "sass?sourceMap"],
     },
     {
+      test: /\.css$/,
+      loaders: ["style", "css?sourceMap"],
+    },
+    {
       test: /\.less$/,
       loader: "style!css!less"
     }]
@@ -30,7 +36,7 @@ var config = {
         'NODE_ENV': '"production"'
       }
     }),
-  ],
+  ]
 };
 
 module.exports = config;
