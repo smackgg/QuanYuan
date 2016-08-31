@@ -30,10 +30,10 @@ function configureStore(initialState = {}) {
 
 const rootEl = document.getElementById('app');
 const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+// const history = syncHistoryWithStore(browserHistory, store);
 const appProps = {
   store,
-  history,
+  history:browserHistory,
 };
 ReactDOM.render(<Main {...appProps}/>,rootEl);
 // ReactDOM.render(

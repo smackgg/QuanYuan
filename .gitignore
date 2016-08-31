@@ -9,3 +9,9 @@ npm-debug.log
 
 #compiled files
 dist/
+assets/
+src/
+
+package.json
+webpack.config.dev.js
+webpack.config.dist.js
