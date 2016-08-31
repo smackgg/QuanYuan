@@ -8,7 +8,6 @@ node_modules
 npm-debug.log
 
 #compiled files
-dist/
 assets/
 src/
 
