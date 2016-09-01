@@ -6,6 +6,7 @@
     "dev": "webpack-dev-server --config ./webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "rm -rf dist/ && webpack -p --config ./webpack.config.dist.js",
+    "devServer": "node devServer",
     "lint": "eslint js"
   },
   "author": "",
@@ -26,6 +27,7 @@
     "eslint": "^2.3.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.0",
+    "express": "^4.14.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "node-sass": "^3.8.0",
