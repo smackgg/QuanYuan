@@ -6,7 +6,7 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
 import Main from './containers/main';
 
-
+import '../assets/styles/style.scss';
 
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
