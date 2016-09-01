@@ -1,12 +1,28 @@
-.skus {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
+@import "variables";
+@import "reset";
+
+html {
+  font-size: 200%;
 }
 
-.layout-align-space-around {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-around;
+body {
+  font-size: $font-size-primary;
+  // font-family: $font-family;
+  line-height: $line-height;
+
+  color: $dark-color-text-primary;
+  background: $dark-color-background;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.clear {
+
+  &::after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
 }
