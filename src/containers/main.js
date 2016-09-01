@@ -3,9 +3,9 @@ import React from 'react';
 import Page1 from './page1';
 import Page2 from './page2';
 import Page3 from './page3';
-
+import { Provider, connect } from 'react-redux';
 import App from './App';
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 // Test data
 
 // style
@@ -13,12 +13,16 @@ import { Router, Route } from 'react-router';
 
 function Main(props) {
   return (
-    <Router history={props.history}>
-      <Route path="/" component={Page1} />
-      <Route path="/page1" component={Page1} />
-      <Route path="/page2" component={Page2} />
-      <Route path="/page3" component={Page3} />
-    </Router>
+    <Provider store={props.store}>
+      <Router history={props.history}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Page1} />
+          <Route path="/page1" component={Page1} />
+          <Route path="/page2" component={Page2} />
+          <Route path="/page3" component={Page3} />
+        </Route>
+      </Router>
+    </Provider>
   );
 };
 
