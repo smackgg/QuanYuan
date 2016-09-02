@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Home from './home';
 import Page1 from './page1';
 import Page2 from './page2';
 import Page3 from './page3';
@@ -16,7 +17,7 @@ function Main(props) {
     <Provider store={props.store}>
       <Router history={props.history}>
         <Route path="/" component={App}>
-          <IndexRoute component={Page1} />
+          <IndexRoute component={Home} />
           <Route path="/page1" component={Page1} />
           <Route path="/page2" component={Page2} />
           <Route path="/page3" component={Page3} />
