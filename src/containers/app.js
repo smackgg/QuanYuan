@@ -1,9 +1,12 @@
 import React from 'react';
+import Nav from '../components/navBar';
 export default React.createClass({
   render() {
-    return (<div>
-        1111fdsfds
-      {this.props.children}
-    </div>);
+    return (
+      <div>
+        <Nav />
+        { this.props.children }
+      </div>
+    );
   },
 });
