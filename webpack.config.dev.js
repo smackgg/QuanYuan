@@ -10,13 +10,16 @@ var config = {
     'webpack/hot/only-dev-server',
   ],
   output: {
-    publicPath: "http://0.0.0.0:8080/dist/",
-    filename: 'bundle.js'
+    publicPath: 'http://0.0.0.0:8080/dist/',
+    filename: 'bundle.js',
   },
   devServer: {
     host: '0.0.0.0',
     port: '8080',
-    historyApiFallback: true
+    historyApiFallback: true,
+    stats: {
+      chunks: false,
+    },
   },
   devtool: 'cheap-module-eval-source-map',
   module: {
