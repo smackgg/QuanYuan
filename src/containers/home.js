@@ -1,27 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { ListView } from 'antd-mobile';
-
-const data = [
-  {
-    img: 'http://7xl432.com1.z0.glb.clouddn.com/background.jpg',
-    page: 'page1',
-  },
-  {
-    img: 'http://7xl432.com1.z0.glb.clouddn.com/page44.jpg',
-    page: 'page2',
-  },
-  {
-    img: 'http://7xkj1z.com1.z0.glb.clouddn.com/bg1.jpg',
-    page: 'page3',
-  },
-];
-let index = data.length - 1;
-
-const NUM_SECTIONS = 4;
-const NUM_ROWS_PER_SECTION = 1;
-let pageIndex = 0;
-
 class Home extends React.Component {
 
   constructor(props) {
@@ -35,7 +14,24 @@ class Home extends React.Component {
       rowHasChanged: (row1, row2) => row1 !== row2,
       sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
     });
+    this.data = [
+      {
+        img: 'http://7xl432.com1.z0.glb.clouddn.com/background.jpg',
+        page: 'page3',
+      },
+      {
+        img: 'http://7xl432.com1.z0.glb.clouddn.com/page44.jpg',
+        page: 'page2',
+      },
+      {
+        img: 'http://7xkj1z.com1.z0.glb.clouddn.com/bg1.jpg',
+        page: 'page1',
+      },
+    ];
+    this.index = this.data.length - 1;
 
+    const NUM_SECTIONS = 4;
+    const NUM_ROWS_PER_SECTION = 1;
     this.dataBlob = {};
     this.sectionIDs = [];
     this.rowIDs = [];
@@ -87,10 +83,10 @@ class Home extends React.Component {
     //   }} />
     // );
     const row = (rowData, sectionID, rowID) => {
-      if (index < 0) {
-        index = data.length - 1;
+      if (this.index < 0) {
+        this.index = this.data.length - 1;
       }
-      const obj = data[index--];
+      const obj = this.data[this.index--];
       return (
         <div key={rowID} >
         <Link to={obj.page}><img className="home-list" src={obj.img} /></Link>
