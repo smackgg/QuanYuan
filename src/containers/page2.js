@@ -1,21 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-function Page2() {
-  return (
-    <div>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <p>page2</p>
-      <Link to="/page3">Jump to page3</Link>
-    </div>
-  );
+import Logo from '../components/logo';
+
+class Page2 extends React.Component {
+  render() {
+    return <Logo />
+  }
 }
 export default Page2;
