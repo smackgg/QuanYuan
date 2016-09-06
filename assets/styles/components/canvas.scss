@@ -1,0 +1,14 @@
+canvas {
+  position: relative; top:50%;
+  left:50%;
+  margin-left:-50vmin;
+  width:100vmin;
+  height:100vmin;
+  overflow:hidden;
+  display: block;
+  -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+}
